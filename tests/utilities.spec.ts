@@ -9,12 +9,10 @@ import {
   toRem,
   getUnit,
   getMediaConditions,
+  ANY,
 } from '@tokens/utils';
 import { resolveMetaThemeRefs } from '@tokens/themes/utils';
 import { describe, expect, it } from 'bun:test';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ANY = any;
 
 const mockTokenGroup = {
   'design-token-1': {

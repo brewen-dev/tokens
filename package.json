@@ -4,16 +4,27 @@
   "version": "1.0.0",
   "author": "Brewen Couaran <contact@brewen.dev>",
   "license": "MIT OR Apache-2.0",
-  "type": "module",
   "engines": {
     "node": "^16.17.0 || >=18.12.0",
     "bun": "^1.0.26"
   },
+  "exports": {
+    ".": {
+      "types": "./types/build/index.d.ts",
+      "import": "./esm/build/index.mjs",
+      "require": "./cjs/build/index.js"
+    }
+  },
   "scripts": {
     "release": "bun x standard-version",
-    "build": "bun run ./scripts/index.ts && cp -r ./src ./dist/src",
+    "build": "bun run build:assets && bun run build:js && bun run build:types && bun run build:clean",
+    "build:assets": "bun run scripts/index.ts",
+    "build:js": "rollup -c",
+    "build:types": "tsc -b",
+    "build:clean": "rm -rf ./build",
     "lint": "bun --bun x eslint 'src/**/*.ts{,x}'",
-    "format": "bun --bun x prettier --write 'src/**/*.ts{,x}'"
+    "format": "bun --bun x prettier --write 'src/**/*.ts{,x}'",
+    "clean": "rm -rf dist build *.tsbuildinfo"
   },
   "homepage": "https://github.com/brewen-dev/tokens",
   "repository": {
@@ -27,21 +38,42 @@
     "access": "public",
     "registry": "https://npm.pkg.github.com/"
   },
+  "browserslist": [
+    "last 3 chrome versions",
+    "last 3 firefox versions",
+    "last 3 opera versions",
+    "last 3 edge versions",
+    "last 3 safari versions",
+    "last 3 chromeandroid versions",
+    "last 1 firefoxandroid versions",
+    "ios >= 13.4",
+    "node 16.17.0"
+  ],
   "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-typescript": "^7.23.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@types/bun": "^1.0.5",
     "@types/eslint": "^8.56.2",
+    "@types/node": "^20.11.17",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "@typescript-eslint/utils": "^6.18.1",
-    "bun-types": "^1.0.26",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "eslint": "^8.56.0",
     "eslint-plugin-compat": "^4.2.0",
     "prettier": "^3.1.0",
+    "rollup": "^4.10.0",
     "semantic-release": "^23.0.2",
-    "typescript": "^5.3.3",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
     "deepmerge": "^4.3.1"
   }
 }

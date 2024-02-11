@@ -7,7 +7,7 @@ import {
     resolveMetaThemeRefs,
 } from '@tokens/themes/utils';
 
-const outputDir = path.join(__dirname, '../dist');
+const outputDir = path.join(__dirname, '../build');
 
 export async function toValues() {
     await fs.promises.mkdir(outputDir).catch((error) => {

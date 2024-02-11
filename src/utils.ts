@@ -11,7 +11,9 @@ import type {
   Theme,
   TokenName,
 } from './themes/types';
-import { ANY } from '../types';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ANY = any;
 
 const BASE_FONT_SIZE = 16;
 
