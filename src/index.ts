@@ -1,5 +1,3 @@
-import { metaThemes } from '@tokens/themes';
-
 export { breakpointsAliases } from './themes/base/breakpoints';
 
 export type { BreakpointsAliasDirection } from './utils';
