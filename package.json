@@ -2,17 +2,30 @@
   "name": "@brewen-dev/tokens",
   "description": "Style tokens for @brewen-dev projects",
   "version": "1.0.0",
+  "author": "Brewen Couaran <contact@brewen.dev>",
   "license": "MIT OR Apache-2.0",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brewen-dev/tokens.git"
+  "engines": {
+    "node": "^16.17.0 || >=18.12.0",
+    "bun": "^1.0.26"
   },
   "scripts": {
     "release": "bun x standard-version",
     "build": "bun run ./scripts/index.ts && cp -r ./src ./dist/src",
     "lint": "bun --bun x eslint 'src/**/*.ts{,x}'",
     "format": "bun --bun x prettier --write 'src/**/*.ts{,x}'"
+  },
+  "homepage": "https://github.com/brewen-dev/tokens",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brewen-dev/tokens.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brewen-dev/tokens/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
