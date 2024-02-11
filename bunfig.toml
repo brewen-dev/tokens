@@ -1,0 +1,4 @@
+telemetry = false
+
+[install.scopes]
+"@brewen-dev" = { token = "$GH_TOKEN", url = "https://npm.pkg.github.com" }

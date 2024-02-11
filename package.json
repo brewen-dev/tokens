@@ -1,0 +1,34 @@
+{
+  "name": "@brewen-dev/tokens",
+  "description": "Style tokens for @brewen-dev projects",
+  "version": "1.0.0",
+  "license": "MIT OR Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brewen-dev/tokens.git"
+  },
+  "scripts": {
+    "release": "bun x standard-version",
+    "build": "bun run ./scripts/index.ts && cp -r ./src ./dist/src",
+    "lint": "bun --bun x eslint 'src/**/*.ts{,x}'",
+    "format": "bun --bun x prettier --write 'src/**/*.ts{,x}'"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/eslint": "^8.56.2",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "@typescript-eslint/utils": "^6.18.1",
+    "bun-types": "^1.0.26",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "eslint": "^8.56.0",
+    "eslint-plugin-compat": "^4.2.0",
+    "prettier": "^3.1.0",
+    "semantic-release": "^23.0.2",
+    "typescript": "^5.3.3",
+    "deepmerge": "^4.3.1"
+  }
+}
