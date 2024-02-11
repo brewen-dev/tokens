@@ -1,4 +1,4 @@
-import type {Entry, Exact} from './types';
+import type { Entry, Exact } from './types';
 import type {
   breakpoints as metaBreakpointsTokenGroup,
   BreakpointsTokenGroup,
@@ -25,7 +25,7 @@ const UNIT_REGEX = new RegExp(`${UNIT_PX}|${UNIT_EM}|${UNIT_REM}`);
 
 export function getUnit(value = '') {
   const unit = value.match(
-    new RegExp(`${DIGIT_REGEX.source}(${UNIT_REGEX.source})`),
+    new RegExp(`${DIGIT_REGEX.source}(${UNIT_REGEX.source})`)
   );
 
   return unit && unit[1];
@@ -48,7 +48,7 @@ export function toPx(value = '') {
 export function toPxs(value: string) {
   return value.replace(
     new RegExp(`${DIGIT_REGEX.source}(${UNIT_EM}|${UNIT_REM})`, 'g'),
-    (emOrRem: string) => toPx(emOrRem) ?? emOrRem,
+    (emOrRem: string) => toPx(emOrRem) ?? emOrRem
   );
 }
 
@@ -91,18 +91,23 @@ export function toRem(value = '') {
 export function rem(value: string) {
   return value.replace(
     new RegExp(`${DIGIT_REGEX.source}(${UNIT_PX})`, 'g'),
-    (px: string) => toRem(px) ?? px,
+    (px: string) => toRem(px) ?? px
   );
 }
 
 export function tokenGroupToRems<T extends MetaTokenGroupShape>(
-  metaTokenGroup: T,
+  metaTokenGroup: T
 ) {
   return Object.fromEntries(
-    Object.entries(metaTokenGroup).map(([tokenName, tokenProperties]: [TokenName, MetaTokenGroupShape[TokenName]]) => [
-      tokenName,
-      {...tokenProperties, value: rem(tokenProperties.value)},
-    ]),
+    Object.entries(metaTokenGroup).map(
+      ([tokenName, tokenProperties]: [
+        TokenName,
+        MetaTokenGroupShape[TokenName],
+      ]) => [
+        tokenName,
+        { ...tokenProperties, value: rem(tokenProperties.value) },
+      ]
+    )
     // We loose the `metaTokenGroup` inference after transforming the object with
     // `Object.fromEntries()` and `Object.entries()`. Thus, we cast the result
     // back to `T` since we are simply converting the `value` from px to rem.
@@ -130,7 +135,7 @@ export function getKeyframeNames(motionTokenGroup: MetaTokenGroupShape) {
 
 export function getTokenNames(theme: Theme | MetaTheme): TokenName[] {
   return Object.values(theme).flatMap((tokenGroup) =>
-    Object.keys(tokenGroup),
+    Object.keys(tokenGroup)
   ) as TokenName[];
 }
 
@@ -172,7 +177,7 @@ export function getMediaConditions(breakpoints: BreakpointsTokenGroup) {
     breakpointEntries.map(
       (
         entry,
-        index,
+        index
       ): [BreakpointsTokenName, BreakpointsAliasDirectionMediaConditions] => {
         const [breakpointsTokenName, breakpoint] =
           entry as Entry<BreakpointsTokenGroup>;
@@ -183,8 +188,8 @@ export function getMediaConditions(breakpoints: BreakpointsTokenGroup) {
           index === lastBreakpointIndex
             ? upMediaCondition
             : `${upMediaCondition} and ${getDownMediaCondition(
-              <string>breakpointEntries[index + 1][1],
-            )}`;
+                <string>breakpointEntries[index + 1][1]
+              )}`;
 
         return [
           breakpointsTokenName,
@@ -197,8 +202,8 @@ export function getMediaConditions(breakpoints: BreakpointsTokenGroup) {
             only: onlyMediaCondition,
           },
         ];
-      },
-    ),
+      }
+    )
   ) as BreakpointsMediaConditions;
 }
 
@@ -217,9 +222,9 @@ function getDownMediaCondition(breakpoint: string) {
   return `(max-width: ${toEm(`${offsetBreakpoint}px`)})`;
 }
 
-export function isKeyOf<T extends {[key: string]: ANY}>(
+export function isKeyOf<T extends { [key: string]: ANY }>(
   obj: T,
-  key: PropertyKey | undefined,
+  key: PropertyKey | undefined
 ): key is keyof T {
   return Object.keys(obj).includes(key as string);
 }
@@ -253,7 +258,7 @@ export const tokenGroupNamesToRems = [
  * Where `typeof example` is inferred as `{ color: { bg: { value: string } } }`
  */
 export function createMetaThemeBase<T extends Exact<MetaThemeShape, T>>(
-  metaTheme: T,
+  metaTheme: T
 ): T {
   return Object.fromEntries(
     Object.entries(metaTheme).map(([tokenGroupName, tokenGroup]) => [
@@ -261,6 +266,6 @@ export function createMetaThemeBase<T extends Exact<MetaThemeShape, T>>(
       tokenGroupNamesToRems.includes(tokenGroupName)
         ? tokenGroupToRems(tokenGroup)
         : tokenGroup,
-    ]),
+    ])
   ) as T;
 }

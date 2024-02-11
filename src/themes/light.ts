@@ -1,4 +1,4 @@
-import {createMetaTheme, createMetaThemePartial} from './utils';
+import { createMetaTheme, createMetaThemePartial } from './utils';
 
 export const metaThemeLightPartial = createMetaThemePartial({});
 

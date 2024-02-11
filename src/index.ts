@@ -1,8 +1,8 @@
 import { metaThemes } from '@tokens/themes';
 
-export {breakpointsAliases} from './themes/base/breakpoints';
+export { breakpointsAliases } from './themes/base/breakpoints';
 
-export type {BreakpointsAliasDirection} from './utils';
+export type { BreakpointsAliasDirection } from './utils';
 
 export {
   createVar,
@@ -14,7 +14,7 @@ export {
   toRem,
 } from './utils';
 
-export {metaThemes, metaThemeDefault} from './themes';
+export { metaThemes, metaThemeDefault } from './themes';
 
 export type {
   ExtractMetaThemeValues,
@@ -26,9 +26,9 @@ export type {
   ThemeName,
 } from './themes/types';
 
-export {themeNameDefault, themeNames} from './themes/constants';
+export { themeNameDefault, themeNames } from './themes/constants';
 
-export {createThemeClassName} from './themes/utils';
+export { createThemeClassName } from './themes/utils';
 
 export type {
   BorderTokenGroup,

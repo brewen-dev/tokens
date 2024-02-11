@@ -1,11 +1,11 @@
-import type {MetaTokenProperties} from '../types';
+import type { MetaTokenProperties } from '../types';
 
 // NOTE: Order is important here: smallest -> largest
 // Exporting as const means it will be typed as a Tuple instead of string[]
 export const breakpointsAliases = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
 // Convert the Tuple to a union
-export type BreakpointsAlias = typeof breakpointsAliases[number];
+export type BreakpointsAlias = (typeof breakpointsAliases)[number];
 
 export type BreakpointsTokenName = `breakpoints-${BreakpointsAlias}`;
 

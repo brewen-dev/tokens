@@ -1,5 +1,5 @@
-import type {MetaTokenProperties} from '../types';
-import {size} from '../../size';
+import type { MetaTokenProperties } from '../types';
+import { size } from '../../size';
 
 export type BorderRadiusScale =
   | '0'

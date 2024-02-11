@@ -1,7 +1,11 @@
 import deepmerge from 'deepmerge';
 
-import type {Entry, Exact} from '../types';
-import {getTokenNames, tokenGroupToRems, tokenGroupNamesToRems} from '../utils';
+import type { Entry, Exact } from '../types';
+import {
+  getTokenNames,
+  tokenGroupToRems,
+  tokenGroupNamesToRems,
+} from '../utils';
 
 import type {
   ExtractMetaThemeValues,
@@ -14,7 +18,7 @@ import type {
   TokenName,
   Theme,
 } from './types';
-import {metaThemeBase} from './base';
+import { metaThemeBase } from './base';
 
 /**
  * Mimics the behavior of an identity function:
@@ -42,12 +46,12 @@ export function createMetaThemePartial<
       tokenGroup && tokenGroupNamesToRems.includes(tokenGroupName)
         ? tokenGroupToRems(tokenGroup)
         : tokenGroup,
-    ]),
+    ])
   ) as T;
 }
 
 export function createMetaTheme<T extends Exact<MetaThemePartialShape, T>>(
-  metaThemePartial: T,
+  metaThemePartial: T
 ): MetaTheme {
   return deepmerge(metaThemeBase, metaThemePartial);
 }
@@ -61,14 +65,14 @@ export function createThemeSelector(themeName: ThemeName) {
 }
 
 export function extractMetaTokenGroupValues<T extends MetaTokenGroupShape>(
-  metaTokenGroup: T,
+  metaTokenGroup: T
 ) {
   return Object.fromEntries(
     Object.entries(metaTokenGroup).map(
-      ([tokenName, {value}]): Entry<
+      ([tokenName, { value }]): Entry<
         ExtractMetaTokenGroupValues<MetaTokenGroupShape>
-      > => [tokenName, value],
-    ),
+      > => [tokenName, value]
+    )
   ) as ExtractMetaTokenGroupValues<T>;
 }
 
@@ -77,8 +81,8 @@ export function extractMetaThemeValues<T extends MetaThemeShape>(metaTheme: T) {
     Object.entries(metaTheme).map(
       ([tokenGroupName, metaTokenGroup]): Entry<
         ExtractMetaThemeValues<MetaThemeShape>
-      > => [tokenGroupName, extractMetaTokenGroupValues(metaTokenGroup)],
-    ),
+      > => [tokenGroupName, extractMetaTokenGroupValues(metaTokenGroup)]
+    )
   ) as ExtractMetaThemeValues<T>;
 }
 
@@ -88,13 +92,13 @@ export function flattenMetaTheme(metaTheme: MetaThemeShape) {
       Object.entries(metaTokenGroup).map(([tokenName, metaTokenProperties]) => [
         tokenName,
         metaTokenProperties,
-      ]),
-    ),
+      ])
+    )
   );
 }
 
 export function resolveMetaThemeRefs<T extends MetaThemeShape>(
-  metaTheme: T,
+  metaTheme: T
 ): T {
   const flattenedMetaTheme = flattenMetaTheme(metaTheme);
 
@@ -112,11 +116,11 @@ export function resolveMetaThemeRefs<T extends MetaThemeShape>(
               tokenValue = flattenedMetaTheme[tokenNameRef].value;
             }
 
-            return [tokenName, {...metaTokenProperties, value: tokenValue}];
-          },
-        ),
+            return [tokenName, { ...metaTokenProperties, value: tokenValue }];
+          }
+        )
       ),
-    ]),
+    ])
   ) as T;
 }
 

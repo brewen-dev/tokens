@@ -1,4 +1,4 @@
-import type {MetaTokenProperties} from '../types';
+import type { MetaTokenProperties } from '../types';
 
 export type ShadowScale = '0' | '100' | '200' | '300' | '400' | '500' | '600';
 

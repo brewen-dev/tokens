@@ -1,6 +1,6 @@
-import {size} from '../../size';
-import {createVarName} from '../../utils';
-import type {MetaTokenProperties} from '../types';
+import { size } from '../../size';
+import { createVarName } from '../../utils';
+import type { MetaTokenProperties } from '../types';
 
 export type SpaceScale =
   | '0'
@@ -23,7 +23,7 @@ export type SpaceScale =
   | '3200';
 
 export type SpaceAlias =
-/** Specialty and component spacing. */
+  /** Specialty and component spacing. */
   'button-group-gap' | 'card-gap' | 'card-padding' | 'table-cell-padding';
 
 export type SpaceAliasOrScale = SpaceAlias | SpaceScale;

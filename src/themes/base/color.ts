@@ -1,4 +1,4 @@
-import type {MetaTokenProperties} from '../types';
+import type { MetaTokenProperties } from '../types';
 import * as colors from '../../colors';
 
 export type ColorBackgroundAlias =

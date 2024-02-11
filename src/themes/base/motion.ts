@@ -1,4 +1,4 @@
-import type {MetaTokenProperties} from '../types';
+import type { MetaTokenProperties } from '../types';
 
 export type MotionDurationScale =
   | '0'

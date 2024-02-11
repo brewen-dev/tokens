@@ -1,5 +1,5 @@
-import {size} from '../../size';
-import type {MetaTokenProperties} from '../types';
+import { size } from '../../size';
+import type { MetaTokenProperties } from '../types';
 
 export type WidthScale =
   | '0'

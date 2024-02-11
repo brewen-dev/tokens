@@ -37,7 +37,7 @@ export type Exact<
 > = ParameterType extends Primitive
   ? ParameterType
   : {
-  [Key in keyof ParameterType]: Exact<ParameterType[Key], InputType[Key]>;
-} & {
-  [Key in Exclude<keyof InputType, KeysOfUnion<ParameterType>>]: never;
-};
+      [Key in keyof ParameterType]: Exact<ParameterType[Key], InputType[Key]>;
+    } & {
+      [Key in Exclude<keyof InputType, KeysOfUnion<ParameterType>>]: never;
+    };

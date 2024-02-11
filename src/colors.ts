@@ -250,7 +250,7 @@ export const vivid: Color = {
   14: 'rgba(150, 0, 83, 1)',
   15: 'rgba(115, 0, 60, 1)',
   16: 'rgba(81, 0, 37, 1)',
-}
+};
 
 export const teal: Color = {
   1: 'rgba(248, 255, 254, 1)',
