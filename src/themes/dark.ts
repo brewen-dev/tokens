@@ -225,6 +225,7 @@ export const metaThemeDarkPartial = createMetaThemePartial({
     'color-bg-fill-critical-selected': {
       value: colors.red[5],
     },
+
     //TODO: Add the rest of the colors
   },
 });
