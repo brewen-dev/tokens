@@ -49,6 +49,8 @@ jobs:
       - name: Verify integrity
         run: npm audit signatures
 
+      - run: ls -la # Debugging purpose
+
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
