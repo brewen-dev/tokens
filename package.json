@@ -18,7 +18,7 @@
   "scripts": {
     "release": "bun x standard-version",
     "build": "bun run build:assets && bun run build:js && bun run build:types && bun run build:clean",
-    "build:assets": "bun run scripts/index.ts",
+    "build:assets": "bun run scripts/index.ts && cp ./package.json ./dist && cp ./README.md ./dist",
     "build:js": "rollup -c",
     "build:types": "tsc -b",
     "build:clean": "rm -rf ./build",
