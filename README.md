@@ -28,3 +28,5 @@ This project is licensed under either of the following, at your option:
 - MIT License ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this project by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
+
+Additionally, the tokens in this repository are based on Shopify's [Polaris tokens](https://github.com/Shopify/polaris/blob/main/polaris-tokens), which are licensed under their own [license](https://github.com/Shopify/polaris/blob/main/LICENSE.md).
