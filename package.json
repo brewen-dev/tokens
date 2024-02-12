@@ -13,7 +13,9 @@
       "types": "./types/build/index.d.ts",
       "import": "./esm/build/index.mjs",
       "require": "./cjs/build/index.js"
-    }
+    },
+    "./css/*": "./css/*",
+    "./scss/*": "./scss/*"
   },
   "scripts": {
     "release": "bun x standard-version",
