@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/brewen-dev/tokens/compare/v1.0.2...v1.1.0) (2024-02-17)
+
+
+### Features
+
+* switch to npm registry ([3a8a99e](https://github.com/brewen-dev/tokens/commit/3a8a99e9acb82b7d1bfb32f9e811fd305560cd75))
+
 ## [1.0.2](https://github.com/brewen-dev/tokens/compare/v1.0.1...v1.0.2) (2024-02-12)
 
 
