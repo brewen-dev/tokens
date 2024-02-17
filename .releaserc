@@ -17,13 +17,13 @@
         pkgRoot: "dist"
       }
     ],
-    "@semantic-release/git",
     [
       "@semantic-release/exec",
       {
-        prepareCmd: "cd dist && zip -qq -r ../tokens-${nextRelease.version}.zip *"
+        prepareCmd: "cp dist/package.json package.json && cd dist && zip -qq -r ../tokens-${nextRelease.version}.zip *"
       }
     ],
+    "@semantic-release/git",
     [
       "@semantic-release/github",
       {
