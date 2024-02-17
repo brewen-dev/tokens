@@ -1,25 +1,25 @@
-# @brewen-dev/tokens
-Style tokens for @brewen-dev/design system.
+# @brewen.dev/tokens
+Style tokens for @brewen.dev/design system.
 
-This repository is a modified version of Shopify's [Polaris tokens](https://github.com/Shopify/polaris/blob/main/polaris-tokens) to fit the needs of @brewen-dev/design.
+This repository is a modified version of Shopify's [Polaris tokens](https://github.com/Shopify/polaris/blob/main/polaris-tokens) to fit the needs of @brewen.dev/design.
 
 ## Usage
 To use the tokens in your project, you can install the package from npm, using the GitHub registry.
 ```bash
-npm install @brewen-dev/tokens
+npm install @brewen.dev/tokens
 ```
 
 Then you can import the tokens in your project.
 ```ts
-import { themes } from '@brewen-dev/tokens';
+import { themes } from '@brewen.dev/tokens';
 ```
 And use them in your styles.
 ```scss
-@import '~@brewen-dev/tokens/scss/styles.scss';
+@import '~@brewen.dev/tokens/scss/styles.scss';
 ```
 There is also a built css version of the tokens available in the `css` folder.
 ```scss
-@import '~@brewen-dev/tokens/css/styles.css';
+@import '~@brewen.dev/tokens/css/styles.css';
 ```
 
 ## License

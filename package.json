@@ -1,7 +1,7 @@
 {
-  "name": "@brewen-dev/tokens",
-  "description": "Style tokens for @brewen-dev projects",
-  "version": "1.0.0",
+  "name": "@brewen.dev/tokens",
+  "description": "Style tokens for @brewen.dev projects",
+  "version": "1.0.2",
   "author": "Brewen Couaran <contact@brewen.dev>",
   "license": "MIT OR Apache-2.0",
   "engines": {
@@ -38,7 +38,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org/"
   },
   "browserslist": [
     "last 3 chrome versions",
