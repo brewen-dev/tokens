@@ -30,7 +30,7 @@
         assets: [
           {
             path: "tokens-*.zip",
-            label: "@brewen-dev/tokens ${nextRelease.version}"
+            label: "@brewen.dev/tokens v${nextRelease.version}"
           }
         ]
       }
