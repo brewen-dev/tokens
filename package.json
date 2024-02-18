@@ -1,7 +1,7 @@
 {
   "name": "@brewen.dev/tokens",
   "description": "Style tokens for @brewen.dev projects",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Brewen Couaran <contact@brewen.dev>",
   "license": "MIT OR Apache-2.0",
   "main": "cjs/build/index.js",
